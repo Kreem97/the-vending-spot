@@ -1,7 +1,30 @@
+import {NavLink} from "react-router-dom"
+import {LazyLoadImage} from "react-lazy-load-image-component"
+
 export default function Header() {
+    const navLinkClasses = "w-[100px] h-[100%] mx-[32px] flex items-center justify-center text-lg font-semibold"
+
     return (
         <>
-            Header
+            <nav className="w-[100%] mt-[12px] px-[32px] py-[6px] bg-[white] flex justify-between xsm:flex-col">
+                <div>
+                    <LazyLoadImage alt="Logo" src="logo.png" className="w-[120px]"/>
+                </div>
+
+                <div>
+                    <ul className="flex justify-between h-[100%]">
+                        <li className={navLinkClasses}>
+                            <NavLink to="/" className="hover:text-[#ae000d]">HOME</NavLink>
+                        </li>
+                        <li className={navLinkClasses}>
+                            <NavLink to="/about" className="hover:text-[#ae000d]">ABOUT</NavLink>
+                        </li>
+                        <li className={navLinkClasses}>
+                            <NavLink to="/contact" className="hover:text-[#ae000d]">CONTACT</NavLink>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
         </>
     )
 }

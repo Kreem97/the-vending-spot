@@ -1,6 +1,5 @@
-import {lazy} from 'react'
+import {lazy, Suspense} from 'react'
 import {Route, Routes} from 'react-router-dom'
-import './App.css'
 
 const Home = lazy(() => import("./pages/Home"))
 const About = lazy(() => import("./pages/About"))
@@ -11,13 +10,14 @@ export default function App() {
         <>
             <main>
                 {/*TODO: add fallback animation*/}
-                {/*<Suspense fallback={<LoadingAnimation/>}>*/}
-                <Routes>
-                    <Route path="/" element={<Home/>}/>
-                    <Route path="about" element={<About/>}/>
-                    <Route path="contact" element={<Contact/>}/>
-                </Routes>
-                {/*</Suspense>*/}
+                <Suspense>
+                    {/*<Suspense fallback={<LoadingAnimation/>}>*/}
+                    <Routes>
+                        <Route path="/" element={<Home/>}/>
+                        <Route path="/about" element={<About/>}/>
+                        <Route path="/contact" element={<Contact/>}/>
+                    </Routes>
+                </Suspense>
             </main>
         </>
     )
