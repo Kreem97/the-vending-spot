@@ -56,11 +56,12 @@ export default function Home() {
 
             {/* FREQUENTLY ASKED QUESTIONS */}
             <section>
-                <div className="my-[36px] text-center text-4xl font-extrabold text-white">FREQUENTLY ASKED QUESTIONS</div>
+                <div className="my-[36px] text-center text-4xl font-extrabold text-white">FREQUENTLY ASKED QUESTIONS
+                </div>
 
                 <div className='flex flex-col items-center mb-[18px]'>
-                    {faqs.map(d => {
-                        return (<FAQ question={d.question} answer={d.answer}/>)
+                    {faqs.map((d, idx) => {
+                        return (<FAQ key={idx} question={d.question} answer={d.answer}/>)
                     })}
                 </div>
 
