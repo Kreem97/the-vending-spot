@@ -2,19 +2,64 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+    font-family: avenirNextLTPro;
+    src: url(assets/fonts/AvenirNextLTPro.otf);
+}
+
+.avenirNext {
+    font-family: avenirNexyLTPro, serif;
+}
+
+@font-face {
+    font-family: avenirNextLTProLight;
+    src: url(assets/fonts/AvenirNextLTPro-Light.otf);
+}
+
+.avenirNextLight {
+    font-family: avenirNextLTProLight, serif;
+}
+
+@font-face {
+    font-family: avenirNextLTProMedium;
+    src: url(assets/fonts/AvenirNextLTPro-Medium.otf);
+}
+
+.avenirNextMedium {
+    font-family: avenirNextLTProMedium, serif;
+}
+
+@font-face {
+    font-family: avenirNextLTProBold;
+    src: url(assets/fonts/AvenirNextLTPro-Bold.otf);
+}
+
+.avenirNextBold {
+    font-family: avenirNextLTProBold, serif;
+}
+
+@font-face {
+    font-family: avenirNextLTProHeavy;
+    src: url(assets/fonts/AvenirNextLTPro-Heavy.otf);
+}
+
+.avenirNextHeavy {
+    font-family: avenirNextLTProHeavy, serif;
+}
+
 :root {
-  /*font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;*/
-  /*line-height: 1.5;*/
-  /*font-weight: 400;*/
+    /*font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;*/
+    /*line-height: 1.5;*/
+    /*font-weight: 400;*/
 
-  /*color-scheme: light dark;*/
-  /*color: rgba(255, 255, 255, 0.87);*/
-  background-color: #ae000d;
+    /*color-scheme: light dark;*/
+    /*color: rgba(255, 255, 255, 0.87);*/
+    background-color: #ae000d;
 
-  /*font-synthesis: none;*/
-  /*text-rendering: optimizeLegibility;*/
-  /*-webkit-font-smoothing: antialiased;*/
-  /*-moz-osx-font-smoothing: grayscale;*/
+    /*font-synthesis: none;*/
+    /*text-rendering: optimizeLegibility;*/
+    /*-webkit-font-smoothing: antialiased;*/
+    /*-moz-osx-font-smoothing: grayscale;*/
 }
 
 /*a {*/
@@ -27,11 +72,11 @@
 /*}*/
 
 html, body {
-  margin: 0;
-  padding: 0;
-  width: 100%;
-  min-width: 320px;
-  min-height: 100vh;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    min-width: 320px;
+    min-height: 100vh;
     overflow-x: hidden;
 }
 

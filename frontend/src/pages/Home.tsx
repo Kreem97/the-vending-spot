@@ -22,30 +22,31 @@ export default function Home() {
     return (
         <>
             <Header/>
-            <Banner/>
+            <Banner preHeading="WELCOME TO" heading="THE VENDING SPOT"/>
 
             {/* HOW IT WORKS */}
             <section className="bg-white">
-                <div className="pt-[112px] pb-[64px] text-center text-4xl font-extrabold text-[#ae000d]">HOW IT WORKS
+                <div className="pt-[112px] pb-[64px] text-center text-4xl avenirNextHeavy text-[#ae000d]">
+                    HOW IT WORKS
                 </div>
 
                 <div className="pb-[112px] flex justify-evenly">
                     <div className="w-[14%] text-center">
-                        <div className="text-7xl font-bold text-[#ae000d]">1</div>
+                        <div className="text-7xl avenirNextHeavy text-[#ae000d]">1</div>
                         <div className="text-sm font-semibold">
                             Step 1 copy can go here. Instead of the number 1, this can be an icon.
                         </div>
                         <div className="text-sm">Secondary information can go on these next few lines.</div>
                     </div>
                     <div className="w-[14%] text-center">
-                        <div className="text-7xl font-bold text-[#ae000d]">2</div>
+                        <div className="text-7xl avenirNextHeavy text-[#ae000d]">2</div>
                         <div className="text-sm font-semibold">
                             Step 2 copy can go here. Instead of the number 2, this can be an icon.
                         </div>
                         <div className="text-sm">Secondary information can go on these next few lines.</div>
                     </div>
                     <div className="w-[14%] text-center">
-                        <div className="text-7xl font-bold text-[#ae000d]">3</div>
+                        <div className="text-7xl avenirNextHeavy text-[#ae000d]">3</div>
                         <div className="text-sm font-semibold">
                             Step 3 copy can go here. Instead of the number 3, this can be an icon.
                         </div>
@@ -56,7 +57,8 @@ export default function Home() {
 
             {/* FREQUENTLY ASKED QUESTIONS */}
             <section>
-                <div className="my-[36px] text-center text-4xl font-extrabold text-white">FREQUENTLY ASKED QUESTIONS
+                <div className="my-[36px] text-center text-4xl avenirNextHeavy text-white">
+                    FREQUENTLY ASKED QUESTIONS
                 </div>
 
                 <div className='flex flex-col items-center mb-[18px]'>

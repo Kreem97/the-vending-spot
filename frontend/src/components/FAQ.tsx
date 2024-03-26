@@ -1,4 +1,6 @@
 import {useState} from 'react'
+import circlePlus from "../assets/images/circle-plus.svg"
+import circleMinus from "../assets/images/circle-minus.svg"
 
 type Props = {
     question: string
@@ -18,7 +20,7 @@ export default function FAQ({question, answer}: Props) {
                     !openFAQ &&
                     <img
                         className='cursor-pointer w-[32px]'
-                        src='circle-plus.svg'
+                        src={circlePlus}
                         alt='circle-plus'
                         onClick={() => setOpenFaq(true)}
                     />
@@ -27,7 +29,7 @@ export default function FAQ({question, answer}: Props) {
                     openFAQ &&
                     <img
                         className='cursor-pointer w-[32px]'
-                        src='circle-minus.svg'
+                        src={circleMinus}
                         alt='circle-minus'
                         onClick={() => setOpenFaq(false)}
                     />
