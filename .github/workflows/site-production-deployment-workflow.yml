@@ -74,6 +74,7 @@ jobs:
           username: '${{ secrets.DEPLOY_SERVER_SSH_USERNAME }}'
           password: '${{ secrets.DEPLOY_SERVER_SSH_PASSWORD }}'
           command: |
+            sudo su
             echo 'y' | ufw enable
             ufw allow 'OpenSSH'
             ufw allow 'Nginx HTTPS'
