@@ -63,7 +63,7 @@ jobs:
           password: '${{ secrets.DEPLOY_SERVER_SSH_PASSWORD }}'
           command: |
             ln -s /etc/nginx/sites-available/site-frontend /etc/nginx/sites-enabled/site-frontend
-            service nginx restart
+            sudo service nginx restart
       # #############################
       # ###### FIREWALL #############
       # #############################
