@@ -6,6 +6,7 @@ import {BaseSyntheticEvent, useState} from "react"
 import {send} from '@emailjs/browser'
 import {toast, ToastContainer} from "react-toastify"
 import 'react-toastify/dist/ReactToastify.css'
+import {config} from "../Config.tsx"
 
 type Props = {
     heading: string
@@ -112,7 +113,7 @@ export default function Banner({heading, preHeading}: Props) {
         }
         hideRequestVendingMachineModalHandler()
 
-        send('service_brnarfw', 'template_wk2l79k', templateParams, {publicKey: 'qlBYQ-eiBGwnizExk'})
+        send(config.emailjsServiceId, config.emailjsRequestFormTemplateId, templateParams, {publicKey: config.emailjsPublicKey})
             .then(() => {
                 toast.success("Request successfully sent")
             })

@@ -1,7 +1,7 @@
 import {Link, NavLink} from "react-router-dom"
 import {LazyLoadImage} from "react-lazy-load-image-component"
 import logo from "../assets/images/logo.png"
-import {useState} from "react";
+import {useState} from "react"
 
 export default function Header() {
     const [openMobileNav, setOpenMobileNav] = useState<boolean>(false)

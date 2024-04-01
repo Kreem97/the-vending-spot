@@ -5,6 +5,7 @@ import {Button} from "react-bootstrap"
 import {BaseSyntheticEvent, useState} from "react"
 import {send} from "@emailjs/browser"
 import {toast} from "react-toastify"
+import {config} from "../Config.tsx"
 
 export default function Contact() {
     const [contactFormInputValues, setContactFormInputValues] = useState<object>({})
@@ -48,7 +49,7 @@ export default function Contact() {
         setContactFormValid(false)
         setContactFormInputValues({})
 
-        send('service_brnarfw', 'template_nnj7ukc', templateParams, {publicKey: 'qlBYQ-eiBGwnizExk'})
+        send(config.emailjsServiceId, config.emailjsContactFormTemplateId, templateParams, {publicKey: config.emailjsPublicKey})
             .then(() => {
                 toast.success("Request successfully sent")
             })
