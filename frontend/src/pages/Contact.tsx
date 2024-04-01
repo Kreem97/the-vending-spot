@@ -65,7 +65,7 @@ export default function Contact() {
             <section className="w-[100%] bg-white flex flex-col items-center">
                 <div className="my-[48px] avenirNextHeavy text-4xl text-center text-[#ae000d]">GET IN TOUCH</div>
 
-                <form className="w-[40%] mb-[48px] flex flex-col">
+                <form className="w-[80%] md:w-[85%] sm:w-[95%] xsm:w-[95%] mb-[48px] flex flex-col">
                     <div>
                         <div className={labelClasses}>Name</div>
                         <input
@@ -76,8 +76,9 @@ export default function Contact() {
                             value={"name" in contactFormInputValues ? contactFormInputValues.name as string : ""}
                         />
                     </div>
-                    <div className="mt-[12px] flex flex-row justify-between">
-                        <div className="w-[47%]">
+
+                    <div className="mt-[12px] flex flex-row flex-wrap justify-between">
+                        <div className="w-[47%] md:w-[100%] sm:w-[100%] xsm:w-[100%]">
                             <div className={labelClasses}>Phone</div>
                             <input
                                 className={inputClasses}
@@ -87,7 +88,7 @@ export default function Contact() {
                                 value={"phone" in contactFormInputValues ? contactFormInputValues.phone as string : ""}
                             />
                         </div>
-                        <div className="w-[47%]">
+                        <div className="w-[47%] md:w-[100%] sm:w-[100%] xsm:w-[100%] md:mt-[12px] sm:mt-[12px] xsm:mt-[12px]">
                             <div className={labelClasses}>Email</div>
                             <input
                                 className={inputClasses}
@@ -98,6 +99,7 @@ export default function Contact() {
                             />
                         </div>
                     </div>
+
                     <div className="mt-[12px]">
                         <div className={labelClasses}>Message</div>
                         <textarea

@@ -20,11 +20,11 @@ export default function Banner({heading, preHeading}: Props) {
     const [requestVendingMachineFormInputValues, setRequestVendingMachineFormInputValues] = useState<object>({})
     const [requestVendingMachineFormInputValuesValid, setRequestVendingMachineFormInputValuesValid] = useState<boolean>(false)
 
-    const blackBtnStyle = "w-[110px] h-[50px] bg-black rounded text-white hover:border-2 hover:border-black hover:bg-white hover:text-black"
-    const redBtnStyle = "w-[110px] h-[50px] bg-[#ae000d] rounded text-white hover:border-2 hover:border-[#ae000d] hover:bg-white hover:text-[#ae000d]"
-    const redBtnInactiveStyle = "opacity-50 w-[110px] h-[50px] bg-[#ae000d] rounded text-white"
-    const greyBtnStyle = "w-[110px] h-[50px] mb-[24px] bg-[#949598] rounded text-white hover:border-2 hover:border-[#949598] hover:bg-white hover:text-[#949598]"
-    const greyBtnSelectedStyle = "w-[110px] h-[50px] mb-[24px] rounded border-2 border-[#949598] bg-white text-[#949598]"
+    const blackBtnStyle = "w-[110px] h-[50px] sm:w-[92px] xsm:w-[92px] sm:h-[40px] xsm:h-[40px] sm:text-sm xsm:text-sm bg-black rounded text-white hover:border-2 hover:border-black hover:bg-white hover:text-black"
+    const redBtnStyle = "w-[110px] h-[50px] sm:w-[92px] xsm:w-[92px] sm:h-[40px] xsm:h-[40px] sm:text-sm xsm:text-sm bg-[#ae000d] rounded text-white hover:border-2 hover:border-[#ae000d] hover:bg-white hover:text-[#ae000d]"
+    const redBtnInactiveStyle = "opacity-50 w-[110px] h-[50px] sm:w-[92px] xsm:w-[92px] sm:h-[40px] xsm:h-[40px] sm:text-sm xsm:text-sm bg-[#ae000d] rounded text-white"
+    const greyBtnStyle = "w-[110px] h-[50px] sm:w-[92px] xsm:w-[92px] sm:h-[40px] xsm:h-[40px] sm:text-sm xsm:text-sm mb-[24px] bg-[#949598] rounded text-white hover:border-2 hover:border-[#949598] hover:bg-white hover:text-[#949598]"
+    const greyBtnSelectedStyle = "w-[110px] h-[50px] sm:w-[92px] xsm:w-[92px] sm:h-[40px] xsm:h-[40px] sm:text-sm xsm:text-sm mb-[24px] rounded border-2 border-[#949598] bg-white text-[#949598]"
 
     const vendingMachineCountBtnValues = ["1", "2", "3", "4", "5", "6+"]
     const requestVendingMachineFormInputs = [
@@ -125,7 +125,19 @@ export default function Banner({heading, preHeading}: Props) {
         <>
             {/* BANNER */}
             <div className="w-[100%] h-[30vw] relative">
-                <div className="w-[90%] absolute top-[50px] left-[5%]">
+                {preHeading ?
+                    (<div
+                        className="sm:visible xsm:visible invisible mt-[8px] text-xl xsm:text-base text-center text-white avenirNextHeavy italic">
+                        {preHeading}
+                    </div>) : ""
+                }
+                <div
+                    className="sm:visible xsm:visible invisible mt-[8px] text-5xl xsm:text-3xl text-center text-white avenirNextHeavy"
+                >
+                    {heading}
+                </div>
+                <div
+                    className="w-[90%] sm:w-[100%] xsm:w-[100%] absolute sm:relative xsm:relative top-[50px] sm:top-0 xsm:top-0 left-[5%] sm:left-0 xsm:left-0">
                     <LazyLoadImage src={banner} className="h-[100%]"/>
                     <Button
                         title="Request Vending Machine"
@@ -135,10 +147,13 @@ export default function Banner({heading, preHeading}: Props) {
                 </div>
                 {preHeading ?
                     (<div
-                        className="w-[80%] absolute top-[10vw] left-[10%] text-center text-white text-6xl avenirNextHeavy italic">
+                        className="sm:hidden xsm:hidden w-[80%] absolute top-[10vw] left-[10%] text-center text-white text-6xl lg:text-5xl md:text-4xl sm:text-2xl avenirNextHeavy italic">
                         {preHeading}
-                    </div>) : ""}
-                <div className="w-[80%] absolute top-[18vw] left-[10%] text-center text-white text-8xl avenirNextHeavy">
+                    </div>) : ""
+                }
+                <div
+                    className="sm:hidden xsm:hidden w-[80%] absolute top-[18vw] left-[10%] text-center text-white text-8xl lg:text-7xl md:text-6xl sm:text-4xl avenirNextHeavy"
+                >
                     {heading}
                 </div>
             </div>
@@ -147,15 +162,19 @@ export default function Banner({heading, preHeading}: Props) {
             {/* REQUEST VENDING MACHINE */}
             <Modal showModal={showRequestVendingMachineModal}
                    hideShowModalHandler={hideRequestVendingMachineModalHandler}>
-                <div className="w-[600px] h-[500px] bg-white">
+                <div className="w-[100%] h-[100%] bg-white">
                     <div className="h-[16%] bg-[#ae000d] flex items-center justify-center">
-                        <div className="text-4xl text-white text-center avenirNextHeavy">REQUEST VENDING MACHINE</div>
+                        <div className="text-4xl sm:text-3xl xsm:text-xl text-white text-center avenirNextHeavy">
+                            REQUEST VENDING MACHINE
+                        </div>
                     </div>
 
                     {
                         requestVendingMachineModalPage == 1 ?
                             <div className="h-[80%] w-[80%] mx-[10%] flex flex-col justify-evenly">
-                                <div className="text-3xl text-black text-center avenirNextHeavy">
+                                <div
+                                    className="text-3xl sm:text-2xl xsm:text-2xl text-black text-center avenirNextHeavy"
+                                >
                                     GET VENDING MACHINES AT YOUR LOCATION?
                                 </div>
 
@@ -174,8 +193,12 @@ export default function Banner({heading, preHeading}: Props) {
 
                     {
                         requestVendingMachineModalPage == 2 ?
-                            <div className="h-[84%] w-[80%] mx-[10%] flex flex-col justify-evenly">
-                                <div className="text-3xl text-black text-center avenirNextHeavy">
+                            <div
+                                className="h-[84%] w-[80%] xsm:w-[96%] mx-[10%] xsm:mx-[2%] flex flex-col justify-evenly"
+                            >
+                                <div
+                                    className="text-3xl sm:text-2xl xsm:text-2xl text-black text-center avenirNextHeavy"
+                                >
                                     HOW MANY MACHINES DO YOU NEED?
                                 </div>
 
@@ -212,13 +235,18 @@ export default function Banner({heading, preHeading}: Props) {
                                 <div className="h-[76%] flex flex-col justify-between">
                                     {requestVendingMachineFormInputs.map((d, idx) => {
                                         return (
-                                            <div key={idx} className="flex flex-row justify-between items-center">
-                                                <div className="w-[14%] text-right text-base font-medium leading-tight">
+                                            <div
+                                                key={idx}
+                                                className="flex flex-row justify-between sm:justify-center xsm:justify-center items-center"
+                                            >
+                                                <div
+                                                    className="w-[14%] sm:w-[18%] xsm:w-[28%] text-right text-base sm:text-sm xsm:text-xs font-medium leading-tight"
+                                                >
                                                     {d.label}
                                                 </div>
-                                                <div className="w-[80%]">
+                                                <div className="w-[80%] sm:w-[76%] xsm:w-[68%] sm:ml-[4%] xsm:ml-[4%]">
                                                     <input
-                                                        className="w-[100%] h-[42px] mt-[4px] pl-[8px] border-2 rounded-md"
+                                                        className="w-[100%] h-[42px] mt-[4px] pl-[8px] border-2 rounded-md sm:text-sm xsm:text-xs"
                                                         name={d.name}
                                                         placeholder={d.placeholder}
                                                         onChange={requestVendingMachineFormInputHandler}
