@@ -74,13 +74,12 @@ jobs:
           username: '${{ secrets.DEPLOY_SERVER_SSH_USERNAME }}'
           password: '${{ secrets.DEPLOY_SERVER_SSH_PASSWORD }}'
           command: |
-            sudo su
-            echo 'y' | ufw enable
-            ufw allow 'OpenSSH'
-            ufw allow 'Nginx HTTPS'
-            ufw default deny incoming
-            ufw default allow outgoing
-            ufw status verbose
+            echo 'y' | sudo ufw enable
+            sudo ufw allow 'OpenSSH'
+            sudo ufw allow 'Nginx HTTPS'
+            sudo ufw default deny incoming
+            sudo ufw default allow outgoing
+            sudo ufw status verbose
       # #############################
       # ###### APPLICATION ##########
       # #############################
@@ -118,7 +117,7 @@ jobs:
             git clone --branch main https://github.com/Kreem97/the-vending-spot.git
             
             # re-setup node cli
-            cd /app/the-vending-spot/deployment/bin/nodejs
+            cd /app/the-vending-spot/deployment/nodejs
             
             xz -d -v node-v18.17.1-linux-x64.tar.xz
             tar -xf node-v18.17.1-linux-x64.tar
@@ -136,5 +135,5 @@ jobs:
             
             # npm install
             cd /app/the-vending-spot/frontend
-            NODE_ENV=production /app/the-vending-spot/deployment/bin/nodejs/node-v18.17.1-linux-x64/lib/node_modules/npm/bin/npm-cli.js install
-            /app/the-vending-spot/deployment/bin/nodejs/node-v18.17.1-linux-x64/lib/node_modules/npm/bin/npm-cli.js run build
+            NODE_ENV=production /app/the-vending-spot/deployment/nodejs/node-v18.17.1-linux-x64/lib/node_modules/npm/bin/npm-cli.js install
+            /app/the-vending-spot/deployment/nodejs/node-v18.17.1-linux-x64/lib/node_modules/npm/bin/npm-cli.js run build
