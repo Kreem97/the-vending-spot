@@ -1,7 +1,9 @@
+import {ReactElement} from "react";
+
 type Props = {
     showModal: boolean
     hideShowModalHandler: () => void
-    children: any
+    children: ReactElement
 }
 
 export default function Modal({showModal, children, hideShowModalHandler}: Props) {
