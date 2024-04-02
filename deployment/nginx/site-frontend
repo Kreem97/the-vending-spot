@@ -4,7 +4,7 @@ server {
   ssl_certificate /etc/nginx/ssl/site-ssl.pem;
   ssl_certificate_key /etc/nginx/ssl/nginx.key;
 
-  root /app/party-mode/frontend/dist;
+  root /app/the-vending-spot/frontend/dist;
   index index.html;
 
   location / {
