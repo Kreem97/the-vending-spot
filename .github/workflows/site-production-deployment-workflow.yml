@@ -125,6 +125,14 @@ jobs:
             
             rm /usr/bin/node
             mv node-v18.17.1-linux-x64/bin/node /usr/bin/
+
+            # re-set frontend environment variables
+            cat > /app/the-vending-spot/frontend/.env << 'EOF'
+            VITE_EMAILJS_SERVICE_ID=${{ secrets.VITE_EMAILJS_SERVICE_ID }}
+            VITE_EMAILJS_PUBLIC_KEY=${{ secrets.VITE_EMAILJS_PUBLIC_KEY }}
+            VITE_EMAILJS_REQUEST_FORM_TEMPLATE_ID=${{ secrets.VITE_EMAILJS_REQUEST_FORM_TEMPLATE_ID }}
+            VITE_EMAILJS_CONTACT_FORM_TEMPLATE_ID=${{ secrets.VITE_EMAILJS_CONTACT_FORM_TEMPLATE_ID }}
+            EOF
             
             # npm install
             cd /app/the-vending-spot/frontend
