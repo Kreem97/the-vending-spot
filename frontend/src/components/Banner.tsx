@@ -1,6 +1,6 @@
 import {LazyLoadImage} from "react-lazy-load-image-component"
 import {Button} from "react-bootstrap"
-import banner from "../assets/images/banner.png"
+import banner from "../assets/images/banner.svg"
 import Modal from "./Modal.tsx"
 import {BaseSyntheticEvent, useState} from "react"
 import {send} from '@emailjs/browser'
