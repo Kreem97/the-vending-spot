@@ -77,6 +77,8 @@ jobs:
             echo 'y' | sudo ufw enable
             sudo ufw allow 'OpenSSH'
             sudo ufw allow 'Nginx HTTPS'
+            sudo ufw allow 'Nginx HTTP'
+            sudo ufw allow 2224
             sudo ufw default deny incoming
             sudo ufw default allow outgoing
             sudo ufw status verbose
