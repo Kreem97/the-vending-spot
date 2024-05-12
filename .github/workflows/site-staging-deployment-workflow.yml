@@ -140,6 +140,6 @@ jobs:
             EOF
             
             # npm install
-            cd /app/the-vending-spot/frontend
+            cd /app-staging/the-vending-spot/frontend
             NODE_ENV=production /app-staging/the-vending-spot/deployment/nodejs/node-v18.17.1-linux-x64/lib/node_modules/npm/bin/npm-cli.js install
             /app-staging/the-vending-spot/deployment/nodejs/node-v18.17.1-linux-x64/lib/node_modules/npm/bin/npm-cli.js run build
