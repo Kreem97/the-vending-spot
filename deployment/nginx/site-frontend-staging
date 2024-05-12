@@ -1,0 +1,22 @@
+server {
+  listen 443 ssl;
+  server_name staging.$host;
+  ssl_certificate /etc/nginx/ssl/site-ssl.pem;
+  ssl_certificate_key /etc/nginx/ssl/nginx.key;
+
+  root /app/the-vending-spot/frontend/dist;
+  index index.html;
+
+  location / {
+    if (-f /usr/share/nginx/html/maintenance_on.html) {
+      return 503;
+    }
+
+    try_files $uri /index.html;
+  }
+
+  error_page 503 /maintenance_on.html;
+  location = /maintenance_on.html {
+    root /usr/share/nginx/html/;
+  }
+}

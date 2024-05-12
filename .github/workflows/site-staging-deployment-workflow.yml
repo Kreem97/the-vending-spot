@@ -1,11 +1,11 @@
-name: site-production-deployment
+name: site-staging-deployment
 'on':
   push:
     branches:
-      - main
+      - develop
   workflow_dispatch: { }
 concurrency:
-  group: 'site-production-deployment-${{ github.ref }}'
+  group: 'site-staging-deployment-${{ github.ref }}'
   cancel-in-progress: true
 jobs:
   prod-deploy:
@@ -38,7 +38,7 @@ jobs:
             ${{ secrets.DEPLOY_SERVER_SSL_CERT }}
             EOF
             
-            openssl rsa -in /etc/nginx/ssl/site-ssl.pem -out /etc/nginx/ssl/nginx.key            
+            openssl rsa -in /etc/nginx/ssl/site-ssl.pem -out /etc/nginx/ssl/nginx.key
       - name: Set Nginx Application Configuration
         uses: TwanLuttik/gh-action-scp@1.0.1
         with:
@@ -86,8 +86,6 @@ jobs:
             echo 'y' | sudo ufw enable
             sudo ufw allow 'OpenSSH'
             sudo ufw allow 'Nginx HTTPS'
-            sudo ufw allow 'Nginx HTTP'
-            sudo ufw allow 2224
             sudo ufw default deny incoming
             sudo ufw default allow outgoing
             sudo ufw status verbose
@@ -120,24 +118,21 @@ jobs:
           password: '${{ secrets.DEPLOY_SERVER_SSH_PASSWORD }}'
           command: |
             # verify app directory
-            rm -rf /app
-            mkdir /app
+            rm -rf /app-staging
+            mkdir /app-staging
             
             # re-clone repo
-            cd /app
-            git clone --branch main https://github.com/Kreem97/the-vending-spot.git
+            cd /app-staging
+            git clone --branch develop https://github.com/Kreem97/the-vending-spot.git
             
             # re-setup node cli
-            cd /app/the-vending-spot/deployment/nodejs
+            cd /app-staging/the-vending-spot/deployment/nodejs
             
             xz -d -v node-v18.17.1-linux-x64.tar.xz
             tar -xf node-v18.17.1-linux-x64.tar
-            
-            rm /usr/bin/node
-            mv node-v18.17.1-linux-x64/bin/node /usr/bin/
 
             # re-set frontend environment variables
-            cat > /app/the-vending-spot/frontend/.env << 'EOF'
+            cat > /app-staging/the-vending-spot/frontend/.env << 'EOF'
             VITE_EMAILJS_SERVICE_ID=${{ secrets.VITE_EMAILJS_SERVICE_ID }}
             VITE_EMAILJS_PUBLIC_KEY=${{ secrets.VITE_EMAILJS_PUBLIC_KEY }}
             VITE_EMAILJS_REQUEST_FORM_TEMPLATE_ID=${{ secrets.VITE_EMAILJS_REQUEST_FORM_TEMPLATE_ID }}
@@ -146,5 +141,5 @@ jobs:
             
             # npm install
             cd /app/the-vending-spot/frontend
-            NODE_ENV=production /app/the-vending-spot/deployment/nodejs/node-v18.17.1-linux-x64/lib/node_modules/npm/bin/npm-cli.js install
-            /app/the-vending-spot/deployment/nodejs/node-v18.17.1-linux-x64/lib/node_modules/npm/bin/npm-cli.js run build
+            NODE_ENV=production /app-staging/the-vending-spot/deployment/nodejs/node-v18.17.1-linux-x64/lib/node_modules/npm/bin/npm-cli.js install
+            /app-staging/the-vending-spot/deployment/nodejs/node-v18.17.1-linux-x64/lib/node_modules/npm/bin/npm-cli.js run build
