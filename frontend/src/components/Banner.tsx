@@ -13,7 +13,7 @@ type Props = {
     preHeading?: string
 }
 
-export default function Banner({heading, preHeading}: Props) {
+export default function Banner({heading, preHeading}: Readonly<Props>) {
     const [showRequestVendingMachineModal, setShowRequestVendingMachineModal] = useState<boolean>(false)
     const [requestVendingMachineModalPage, setRequestVendingMachineModalPage] = useState<number>(1)
     const [requestVendingMachineCount, setRequestVendingMachineCount] = useState<string>("")
