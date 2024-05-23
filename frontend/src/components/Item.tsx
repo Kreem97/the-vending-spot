@@ -16,7 +16,7 @@ export default function Item({image, alt, title, summary, description}: Readonly
     return (
         <>
             <div
-                className={"w-[350px] p-4"}
+                className={"w-[350px] p-4 m-4 bg-[#f4f4f4] rounded-lg"}
                 onClick={description ? () => setShowVendingMachineInfoModal(true) : undefined}
             >
                 {/* image */}
@@ -57,7 +57,7 @@ export default function Item({image, alt, title, summary, description}: Readonly
             >
                 <div className={"w-[100%] h-[100%] bg-[#ffffff] flex flex-col overflow-scroll"}>
                     <div
-                        className="w-[100%] pt-[24px] flex justify-center items-center text-5xl lg:4xl md:text-4xl sm:text-4xl xsm:text-3xl avenirNextHeavy text-[#ae000d]"
+                        className="w-[100%] pt-[24px] flex justify-center items-center text-5xl lg:4xl md:text-4xl sm:text-4xl xsm:text-3xl avenirNextHeavy text-center text-[#ae000d]"
                     >{title}</div>
 
                     <div
