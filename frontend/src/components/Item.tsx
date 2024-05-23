@@ -1,6 +1,5 @@
 import {LazyLoadImage} from "react-lazy-load-image-component"
 import {useState} from "react"
-import DOMPurify from 'dompurify'
 import Modal from "./Modal.tsx"
 
 type Props = {
@@ -68,7 +67,7 @@ export default function Item({image, alt, title, summary, description}: Readonly
 
                         <div
                             className="p-[4%] bg-white list-disc"
-                            dangerouslySetInnerHTML={{__html: DOMPurify.sanitize(description || "")}}
+                            dangerouslySetInnerHTML={{__html: description || ""}}
                         ></div>
                     </div>
                 </div>
