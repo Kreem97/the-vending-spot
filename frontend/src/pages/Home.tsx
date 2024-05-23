@@ -3,10 +3,10 @@ import Footer from "../components/Footer.tsx"
 import Banner from "../components/Banner.tsx"
 import FAQ from "../components/FAQ.tsx"
 import Item from "../components/Item.tsx"
-import atmImg from "../assets/images/services/atm.svg"
-import standardVendingImg from "../assets/images/services/standard-vending.svg"
-import coffeeImg from "../assets/images/services/coffee.svg"
-import arcadeImg from "../assets/images/services/arcade.svg"
+import atmImg from "../assets/images/services/atm.jpeg"
+import standardVendingImg from "../assets/images/services/standard-vending.jpeg"
+import coffeeImg from "../assets/images/services/coffee.jpeg"
+import arcadeImg from "../assets/images/services/arcade.jpeg"
 
 const services = [
     {
