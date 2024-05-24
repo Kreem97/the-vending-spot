@@ -10,8 +10,8 @@ export default function Header() {
         setOpenMobileNav(!openMobileNav)
     }
 
-    const navLinkShape = "w-[100px] md:w-[70px] sm:w-[40px]"
-    const navLinkPositioning = "mx-[32px] flex items-center justify-center"
+    const navLinkShape = "w-[120px] md:w-[70px] sm:w-[40px]"
+    const navLinkPositioning = "mx-[32px] flex items-center justify-center whitespace-nowrap"
     const navLinkStyle = "text-xl md:text-lg sm:text-base font-semibold"
     const navLinkClasses = navLinkShape + " " + navLinkPositioning + " " + navLinkStyle
     const mobileNavLinkClasses = "flex items-center justify-center text-lg font-bold"
@@ -31,7 +31,7 @@ export default function Header() {
                             <NavLink to="/" className="hover:text-[#ae000d]">HOME</NavLink>
                         </li>
                         <li className={navLinkClasses}>
-                            <NavLink to="/about" className="hover:text-[#ae000d]">ABOUT</NavLink>
+                            <NavLink to="/vending-machines" className="hover:text-[#ae000d]">VENDING MACHINES</NavLink>
                         </li>
                         <li className={navLinkClasses}>
                             <NavLink to="/contact" className="hover:text-[#ae000d]">CONTACT</NavLink>
@@ -73,7 +73,7 @@ export default function Header() {
                         <NavLink to="/" className="">HOME</NavLink>
                     </li>
                     <li className={mobileNavLinkClasses + " pb-[8px]"}>
-                        <NavLink to="/about" className="">ABOUT</NavLink>
+                        <NavLink to="/vending-machines" className="">VENDING MACHINES</NavLink>
                     </li>
                     <li className={mobileNavLinkClasses}>
                         <NavLink to="/contact" className="">CONTACT</NavLink>

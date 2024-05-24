@@ -2,7 +2,7 @@ import {lazy, Suspense} from 'react'
 import {Route, Routes} from 'react-router-dom'
 
 const Home = lazy(() => import("./pages/Home"))
-const About = lazy(() => import("./pages/About"))
+const VendingMachines = lazy(() => import("./pages/VendingMachines"))
 const Contact = lazy(() => import("./pages/Contact"))
 
 export default function App() {
@@ -14,7 +14,7 @@ export default function App() {
                     {/*<Suspense fallback={<LoadingAnimation/>}>*/}
                     <Routes>
                         <Route path="/" element={<Home/>}/>
-                        <Route path="/about" element={<About/>}/>
+                        <Route path="/vending-machines" element={<VendingMachines/>}/>
                         <Route path="/contact" element={<Contact/>}/>
                     </Routes>
                 </Suspense>

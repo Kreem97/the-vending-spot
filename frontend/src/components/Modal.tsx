@@ -4,14 +4,16 @@ type Props = {
     showModal: boolean
     hideShowModalHandler: () => void
     children: ReactElement
+    largeModal?: boolean
 }
 
-export default function Modal({showModal, children, hideShowModalHandler}: Props) {
+export default function Modal({showModal, children, hideShowModalHandler, largeModal}: Props) {
     if (!showModal) {
         return null
     }
 
-    const modalResponsiveSize = "w-[600px] h-[500px] sm:w-[80%] xsm:w-[80%]"
+    const modalResponsiveSize =
+        largeModal ? "w-[800px] h-[85%] md:w-[80%] sm:w-[80%] xsm:w-[80%]" : "w-[600px] h-[500px] sm:w-[80%] xsm:w-[80%]"
 
     return (
         <div className='fixed z-[1999] top-0 left-0 w-[calc(100vw - 100%)] min-h-[100vh] overflow-auto'>
