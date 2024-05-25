@@ -35,11 +35,11 @@ export default function FAQ({question, answer}: Props) {
             </div>
 
             <div
-                className='w-[100%] px-[18px] mt-[6px] transition-[height] duration-300'
+                className='w-[100%] px-[18px] mt-[6px] transition-[height] duration-300 overflow-hidden flex items-center'
                 style={
                     openFAQ
-                        ? {height: "30px", overflow: "auto"}
-                        : {height: "0px", overflow: "hidden"}
+                        ? {height: "60px" }
+                        : {height: "0px"}
                 }
             >
                 <p>{answer}</p>
