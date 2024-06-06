@@ -140,11 +140,6 @@ export default function Banner({heading, preHeading}: Readonly<Props>) {
                 <div
                     className="w-[90%] sm:w-[100%] xsm:w-[100%] absolute sm:relative xsm:relative top-[50px] sm:top-0 xsm:top-0 left-[5%] sm:left-0 xsm:left-0">
                     <LazyLoadImage src={banner} className="h-[100%]"/>
-                    <Button
-                        title="Request Vending Machine"
-                        className="absolute w-[140px] h-[60px] bottom-[32px] left-[32px] bg-[#ae000d] rounded-md text-white hover:bg-white hover:text-[#ae000d]"
-                        onClick={() => setShowRequestVendingMachineModal(true)}
-                    >Request Vending Machine</Button>
                 </div>
                 {preHeading ?
                     (<div
@@ -159,6 +154,12 @@ export default function Banner({heading, preHeading}: Readonly<Props>) {
                 </div>
             </div>
             <div className="bg-white h-[16vh]"></div>
+
+            <Button
+                title="Request Vending Machine"
+                className="fixed w-[140px] h-[60px] bottom-[32px] left-[32px] bg-[#ae000d] border-2 border-black rounded-md text-white hover:bg-white hover:border-[#ae000d] hover:text-[#ae000d]"
+                onClick={() => setShowRequestVendingMachineModal(true)}
+            >Request Vending Machine</Button>
 
             {/* REQUEST VENDING MACHINE */}
             <Modal showModal={showRequestVendingMachineModal}

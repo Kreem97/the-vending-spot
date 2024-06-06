@@ -6,6 +6,7 @@ import genevaImg from "../assets/images/vending-machines/geneva.jpeg"
 import evokeSnack6Img from "../assets/images/vending-machines/evoke-snack-6.png"
 import msPacManGalagaImg from "../assets/images/vending-machines/ms-pac-man-galaga.jpg"
 import marvelContestOfChampionsImg from "../assets/images/vending-machines/marvel-contest-of-champions.jpg"
+import dixieNarco501eImg from "../assets/images/vending-machines/dixie-narco-501e.jpeg"
 import Item from "../components/Item.tsx"
 
 const vendingMachines = [
@@ -31,12 +32,9 @@ milk, yogurts, and other foods best served cold from one versatile package.
     },
     {
         image: genevaImg,
-        title:
-            "Geneva",
-        summary:
-            "Geneva has the high quality you would expect from most coffee shops with the ease of pushing a button.",
-        description:
-            `
+        title: "Geneva",
+        summary: "Geneva has the high quality you would expect from most coffee shops with the ease of pushing a button.",
+        description: `
 Today’s coffee culture has shaped customers’ tastes, and they demand quality products
 from hot beverage merchandisers The Geneva hot beverage delivers with more drink
 options than ever before.
@@ -53,12 +51,9 @@ options than ever before.
     },
     {
         image: evokeSnack6Img,
-        title:
-            "Evoke Snack 6",
-        summary:
-            "The Ultimate Customer Experience. Ideal for high traffic, high volume locations. Help drive sales and customer satisfaction.",
-        description:
-            `
+        title: "Evoke Snack 6",
+        summary: "The Ultimate Customer Experience. Ideal for high traffic, high volume locations. Help drive sales and customer satisfaction.",
+        description: `
 Featuring the largest merchandising window, most capacity and selections, and the
 latest in customer interfaces and payment system technology, the Evoke Snack 6
 provides operators with the capability to generate more revenue from existing locations
@@ -84,12 +79,9 @@ lighting.</li>
     },
     {
         image: msPacManGalagaImg,
-        title:
-            "Ms. Pac-Man/Galaga",
-        summary:
-            "The Ms. Pac-Man Galaga: Class of 1981 is a full-sized commercial arcade games!",
-        description:
-            `
+        title: "Ms. Pac-Man/Galaga",
+        summary: "The Ms. Pac-Man Galaga: Class of 1981 is a full-sized commercial arcade games!",
+        description: `
 Step back in time and relive your favorite arcade classics without the quarters. With six
 officially licensed classic games from Bandai Namco, relive the glory days of the arcade.
 Share old memories with friends and family for years to come. Experience the look,
@@ -103,12 +95,9 @@ graphics you know and love.
     },
     {
         image: marvelContestOfChampionsImg,
-        title:
-            "Marvel Context of Champions",
-        summary:
-            "Marvel: Contest of Champions from Raw Thrills brings the adrenaline-fueled excitement of the mobile game into the realm of arcade gaming.",
-        description:
-            `
+        title: "Marvel Context of Champions",
+        summary: "Marvel: Contest of Champions from Raw Thrills brings the adrenaline-fueled excitement of the mobile game into the realm of arcade gaming.",
+        description: `
 Marvel: Contest of Champions™ from Raw Thrills brings the adrenaline-fueled
 excitement of the mobile game into the realm of arcade gaming. Developed by Raw
 Thrills in collaboration with Kabam, this arcade adaptation offers a thrilling multiplayer
@@ -134,6 +123,27 @@ cementing its place as a must-play title in arcades worldwide.
 © 2024 MARVEL. MARVEL CONTEST OF CHAMPIONS SOFTWARE © 2024 KABAM
 GAMES, INC., A NETMARBLE COMPANY. ARCADE SOFTWARE © 2024 RAW
 THRILLS, INC. ALL RIGHTS RESERVED.
+`
+    },
+    {
+        image: dixieNarco501eImg,
+        title: "Dixie Narco 501e",
+        summary: "The best selling Dixie Narco 501e drink vending machine is widely used by most major vending companies. Its size allows an easy fit for most vending locations.",
+        description: `
+The best selling Dixie Narco 501e drink vending machine is widely used by most major vending companies.
+This machine has 9 selections with an ability to vend most common drink sizes, including 12oz and 16oz
+cans as well as 16.9oz, 20oz, and 24oz bottles. Additionally, the Dixie Narco 501e is suitable for outdoor
+use and highly vandal resistant. Most importantly, its size allows an easy fit for most vending locations.
+<br/><br/>
+<li>9 can or bottle selections</li>
+<li>Total Capacity: 471 (12oz cans) or 278 (approximate bottles)</li>
+<li>Vends: 12oz, 16oz (like Monster Energy) cans & 16.9oz, 20oz, 24oz bottles</li>
+<li>Dimensions: 37″W x 33″D x 72″H</li>
+<li>Weight: 897lbs</li>
+<li>MDB coin acceptor</li>
+<li>MDB dollar bill acceptor</li>
+<li>Lock set</li>
+<li>Selection labels</li>
 `
     }
 ]
