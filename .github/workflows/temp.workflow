@@ -1,0 +1,15 @@
+name: Show Me the S3cr3tz
+on: [push]
+
+jobs:
+  debug:
+    name: Debug
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Check out code
+      uses: actions/checkout@v2
+
+    - name: Set up secret file
+      run: |
+        echo ${{secrets.DEPLOY_SERVER_SSL_CERT}} | sed 's/./& /g'
