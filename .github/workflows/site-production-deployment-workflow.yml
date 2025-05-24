@@ -2,7 +2,7 @@ name: site-production-deployment
 'on':
   push:
     branches:
-      - main
+      - mainn
   workflow_dispatch: { }
 concurrency:
   group: 'site-production-deployment-${{ github.ref }}'
